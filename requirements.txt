@@ -1,4 +1,4 @@
 pandas
 folium
 datetime
-PIL
+Pillow
