@@ -32,7 +32,7 @@ def create_map(date):
         opacity = max(min((probabilite - 0.05) / 0.7, 1, 0.7), 0.2)
         if opacity > 0.7 :
             opacity = 0.3
-        color = 'green' if probabilite < 0.05 else 'orange' if probabilite < 0.25 else 'red'
+        color = 'green' if probabilite < 0.1 else 'orange' if probabilite < 0.4 else 'red'
         folium.CircleMarker(location=[row['latitude'], row['longitude']], radius=5, color=color, fill=True, fill_color=color).add_to(m)
         folium.Circle(location=[row['latitude'], row['longitude']], radius=50000, fill_color=color, color=color, fill_opacity=0.1, popup=f"Probabilité d'incendie : {probabilite:.2f}").add_to(m)
 
